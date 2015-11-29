@@ -1,6 +1,6 @@
 {
   "name": "beoi-jaws",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "location": "https://github.com/...",
   "author": "",
   "description": "",
@@ -11,7 +11,8 @@
         "region": "eu-west-1",
         "iamRoleArnLambda": "arn:aws:iam::036692905672:role/prod-beoi-jaws-r-IamRoleLambda-1B84AJ4W6BI7H",
         "iamRoleArnApiGateway": "arn:aws:iam::036692905672:role/prod-beoi-jaws-r-IamRoleApiGateway-TVM13C9U690Y",
-        "jawsBucket": "jaws.prod.euwest1.api.be-oi.be"
+        "jawsBucket": "jaws.prod.euwest1.api.be-oi.be",
+        "restApiId": "umd7688jz7"
       }
     ]
   }

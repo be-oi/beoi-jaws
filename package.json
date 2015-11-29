@@ -12,6 +12,9 @@
   "keywords": [],
   "devDependencies": {},
   "dependencies": {
-    "jaws-core-js": "~0.0.2"
+    "jaws-core-js": "~0.0.2",
+    "bluebird": "^2.10.0",
+    "debug": "^2.2.0",
+    "moment": "^2.10.6"
   }
 }

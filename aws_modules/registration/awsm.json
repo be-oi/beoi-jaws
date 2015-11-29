@@ -1,0 +1,52 @@
+{
+  "name": "registration",
+  "version": "0.0.3",
+  "location": "https://github.com/...",
+  "author": "Damien Leroy",
+  "description": "Registration management for beOI contest",
+  "resources": {
+    "cloudFormation": {
+      "ApiGatewayIamPolicyDocumentStatements": [],
+      "LambdaIamPolicyDocumentStatements": [
+
+        {
+           "Effect": "Allow",
+           "Action": [ "PutItems" ],
+           "Resource": {
+             "Fn::Join": [
+               ":",
+               [ "arn:aws:dynamodb", { "Ref": "AWS::Region" }, "*", "table/beoi-contestants" ]
+             ]
+           }
+         }
+
+      ],
+      "Resources": {
+
+        "DynamoDB": {
+          "Type" : "AWS::DynamoDB::Table",
+          "Properties": {
+            "AttributeDefinitions": [
+              {
+                "AttributeName": "email",
+                "AttributeType": "S"
+              }
+            ],
+            "KeySchema" : [
+              {
+                "AttributeName": "email",
+                "KeyType": "HASH"
+              }
+            ],
+            "ProvisionedThroughput" : {
+              "ReadCapacityUnits":  1,
+              "WriteCapacityUnits": 1
+            },
+            "TableName": "beoi-contestants"
+          }
+        }
+
+      }
+    }
+  }
+}
